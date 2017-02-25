@@ -1,7 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var config = {
-    entry: './src/ExampleApp.js',
+    entry: './example/ExampleApp.js',
     output: {
         path: path.resolve(__dirname, 'example'),
         filename: 'scripts.js'
@@ -19,10 +19,6 @@ var config = {
         { 
             test: /\.css$/, 
             loader: ExtractTextPlugin.extract({ use: 'css-loader' })
-        },
-        {
-            test: /\.css$/,
-            loader: 'postcss-loader'
         }
         ]
   },

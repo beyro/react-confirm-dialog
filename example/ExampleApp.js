@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ConfirmLink from './ConfirmLink.js';
+import ConfirmLink from '../lib/ConfirmLink.js';
+require('../lib/Confirm.css');
 
 ConfirmLink.defaultProps.confirmMessage = 'Are you sure you want to change the colors?';
 var ExampleApp = React.createClass({

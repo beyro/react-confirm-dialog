@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./src/ConfirmLink.js');
+module.exports = require('./lib/ConfirmLink.js');
