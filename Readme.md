@@ -2,24 +2,25 @@
 A component to replace the native confirm for use with React. Renders the confirm dialog outside of your component appended to `body`.
 
 ## Usage
-Pass the function to perform on confirmation to the `action` prop. Pass the arguments to the `actionArgs` prop.
 ```
+import ConfirmLink from 'react-confirm-dialog';
+
 class App extends React.Component {
-  sum(args) { 
+  alertSum(args) { 
     alert(args.a + args.b); 
   }
   render() {
     return (
-      <ReactConfirmLink action={this.sum} actionArgs={{a:1, b:2}}>
+      <ConfirmLink action={this.alertSum} actionArgs={{a:1, b:2}}>
         <a href="#">Click me to trigger the confirm popup</a>
-      </ReactConfirmLink>
+      </ConfirmLink>
     );
   }
 }
 ```
 
 ## Props
-- `action`: The action to perform when the user confirms.
+- `action`: The action to perform when the user clicks the confirm button.
 - `actionArgs`: Arguments to be passed to the action.
 - `confirmMessage`: The message to display to the user in the confirm dialog (defaults to "Are you sure that you want to do this?").
 - `confirmText`: The text to display in the confirm button (defaults to "Yes please").
