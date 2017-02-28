@@ -6,10 +6,10 @@ import ConfirmDialog from '../src/ConfirmDialog.js';
 
 describe('Mount and Render tests', () => {
     it('should mount in a full DOM', () => {
-        expect(mount(<ConfirmDialog />).find('.react-confirm-modal-bg').length).toBe(1);
+        expect(mount(<ConfirmDialog />).find('.react-confirm-dialog-bg').length).toBe(1);
     });
     it('should render properly', () => {
-        expect(render(<ConfirmDialog />).find('.react-confirm-modal-bg').length).toBe(1);
+        expect(render(<ConfirmDialog />).find('.react-confirm-dialog-bg').length).toBe(1);
     });
 
     
@@ -32,26 +32,26 @@ describe('Prop change tests', () => {
     });
 
     it('Should change confirm button text', () => {
-        expect(dialog.find('.confirm-button.confirm').text()).toEqual('Confirm');
+        expect(dialog.find('.react-confirm-dialog-button.confirm').text()).toEqual('Confirm');
 
         // Change the text
         dialog.setProps({
             confirmText: 'Yes'
         }, () => {
             //Expect the new text to appear
-            expect(dialog.find('.confirm-button.confirm').text()).toEqual('Yes');
+            expect(dialog.find('.react-confirm-dialog-button.confirm').text()).toEqual('Yes');
         });
     });
 
     it('Should change cancel button text', () => {
-        expect(dialog.find('.confirm-button.cancel').text()).toEqual('Cancel');
+        expect(dialog.find('.react-confirm-dialog-button.cancel').text()).toEqual('Cancel');
 
         // Change the text
         dialog.setProps({
             cancelText: 'No'
         }, () => {
             //Expect the new text to appear
-            expect(dialog.find('.confirm-button.cancel').text()).toEqual('No');
+            expect(dialog.find('.react-confirm-dialog-button.cancel').text()).toEqual('No');
         });
     });
 });
@@ -60,7 +60,7 @@ describe('Actions tests', () => {
     let dialog = shallow(
         <ConfirmDialog action={(args) => { return args.a+args.b; } } actionArgs={{a:1,b:2}} />
     );
-    let button = dialog.find('.confirm-button.confirm');
+    let button = dialog.find('.react-confirm-dialog-button.confirm');
     it('should trigger action that returns sum of args', () => {
         expect(
             dialog.instance().executeAction()
@@ -77,18 +77,18 @@ describe('Actions tests', () => {
     });
 
     it('should close the component after triggering action when action button is clicked', () => {
-        dialog.find('.confirm-button.confirm').simulate('click', () => {
+        dialog.find('.react-confirm-dialog-button.confirm').simulate('click', () => {
             expect(
-                dialog.find('.react-confirm-modal-bg').length
+                dialog.find('.react-confirm-dialog-bg').length
             ).toBe(0);
         });
         
     });
 
     it('should close the component when cancel button is clicked', () => {
-        dialog.find('.confirm-button.cancel').simulate('click', () => {
+        dialog.find('.react-confirm-dialog-button.cancel').simulate('click', () => {
             expect(
-                dialog.find('.react-confirm-modal-bg').length
+                dialog.find('.react-confirm-dialog-bg').length
             ).toBe(0);
         });
         
