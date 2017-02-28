@@ -1,6 +1,6 @@
 {
   "name": "react-confirm-dialog",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "repository": {
@@ -15,8 +15,6 @@
   "author": "Byron Matus",
   "license": "ISC",
   "dependencies": {
-    "install": "^0.8.7",
-    "npm": "^4.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
