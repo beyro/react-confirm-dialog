@@ -1,5 +1,7 @@
 # React Confirm Dialog
-A component to replace the native confirm for use with React. Renders the confirm dialog outside of your component appended to `body`.
+A React confirm component. It does not work like the native Window.confirm(), but instead takes an `action` argument, which is the function to execute if the user confirms.
+
+The confirm dialog renders outside of your component appended to `body` using a portal.
 
 ## Usage
 ```
