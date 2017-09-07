@@ -28,6 +28,8 @@ class App extends React.Component {
 - `asHtml`: Indicate that `confirmMessage` is HTML.  __Unchecked content__, advise use of static information.
 - `confirmText`: The text to display in the confirm button (defaults to "Yes please").
 - `cancelText`: The text to display in the cancel button (defaults to "No thank you").
+- `confirmClasses`: String of class names to apply to confirm button (see Styling)
+- `cancelClasses`: String of class names to apply to cancel button (see Styling)
 
 ### Setting default props
 You can change the default props globally for all confirms with ConfirmLink.defaultProps[prop_name].
@@ -47,4 +49,11 @@ There are two styles included in Confirm.css for the modal background and the co
 ```
 These have minimal properties to create a modal effect.
 
-To style the confirm and cancel buttons, add styles for the class combinations `react-confirm-dialog-button confirm` and `react-confirm-dialog-button cancel`
+### Buttons
+There are two methods for styling the buttons:
+
+1. Add styles for the class combinations:
+  * `react-confirm-dialog-button confirm`
+  * `react-confirm-dialog-button cancel`
+2. Pass class name string via the properties. `confirmClasses` and `cancelClasses`
+  * This allows use of existing loaded css classes e.g. bootstrap
