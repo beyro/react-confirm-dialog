@@ -16,7 +16,6 @@ var ConfirmDialog = createReactClass({
 		return result;
 	},
 	render: function() {
-		console.log(this.props)
 		return (
 			<div className="react-confirm-dialog-bg">
 				<div className="react-confirm-dialog-content">
