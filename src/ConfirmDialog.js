@@ -26,6 +26,7 @@ var ConfirmDialog = createReactClass({
 					<button className={this.props.confirmClasses} onClick={this.executeAction}>
 						{this.props.confirmText}
 					</button>
+					&nbsp;
 					<button className={this.props.cancelClasses} onClick={this.props.cancel}>
 						{this.props.cancelText}
 					</button>
