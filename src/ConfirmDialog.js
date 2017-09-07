@@ -5,6 +5,8 @@ var ConfirmDialog = createReactClass({
 	getDefaultProps: function() {
 		return {
 			asHtml: false,
+			confirmClasses: 'react-confirm-dialog-button confirm',
+			cancelClasses: 'react-confirm-dialog-button cancel',
 			cancel: function() { return; }
 		};
 	},
@@ -22,10 +24,10 @@ var ConfirmDialog = createReactClass({
 						<div dangerouslySetInnerHTML={{__html: this.props.confirmMessage}} />}
 					{this.props.asHtml == false
 						&& <p>{this.props.confirmMessage}</p>}
-					<button className="react-confirm-dialog-button confirm" onClick={this.executeAction}>
+					<button className={this.props.confirmClasses} onClick={this.executeAction}>
 						{this.props.confirmText}
 					</button>
-					<button className="react-confirm-dialog-button cancel" onClick={this.props.cancel}>
+					<button className={this.props.cancelClasses} onClick={this.props.cancel}>
 						{this.props.cancelText}
 					</button>
 				</div>
