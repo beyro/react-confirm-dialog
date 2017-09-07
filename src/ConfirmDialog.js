@@ -3,6 +3,7 @@ import React from 'react';
 var ConfirmDialog = React.createClass({
 	getDefaultProps: function() {
 		return {
+			asHtml: false,
 			cancel: function() { return; }
 		};
 	},
@@ -12,10 +13,14 @@ var ConfirmDialog = React.createClass({
 		return result;
 	},
 	render: function() {
+		console.log(this.props)
 		return (
 			<div className="react-confirm-dialog-bg">
 				<div className="react-confirm-dialog-content">
-					<p>{this.props.confirmMessage}</p>
+				  {this.props.asHtml == true &&
+						<div dangerouslySetInnerHTML={{__html: this.props.confirmMessage}} />}
+					{this.props.asHtml == false
+						&& <p>{this.props.confirmMessage}</p>}
 					<button className="react-confirm-dialog-button confirm" onClick={this.executeAction}>
 						{this.props.confirmText}
 					</button>
