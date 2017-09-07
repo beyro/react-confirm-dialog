@@ -1,6 +1,7 @@
 import React from 'react';
+var createReactClass = require('create-react-class');
 
-var ConfirmDialog = React.createClass({
+var ConfirmDialog = createReactClass({
 	getDefaultProps: function() {
 		return {
 			asHtml: false,

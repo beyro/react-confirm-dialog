@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+var createReactClass = require('create-react-class');
 
 /* Based on: http://stackoverflow.com/questions/28802179/how-to-create-a-react-modalwhich-is-append-to-body-with-transitions */
-var Portal = React.createClass({
+var Portal = createReactClass({
   render: () => null,
   portalElement: null,
   componentDidMount() {
