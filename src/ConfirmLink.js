@@ -1,9 +1,11 @@
 import React from 'react';
 import ConfirmDialog from './ConfirmDialog';
 import Portal from './Portal.js';
+
+var createReactClass = require('create-react-class');
 require('./Confirm.css');
 
-var ConfirmLink = React.createClass({
+var ConfirmLink = createReactClass({
 	getInitialState: function() {
         return { showConfirm: false };
     },

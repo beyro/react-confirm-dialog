@@ -1,8 +1,12 @@
 import React from 'react';
+var createReactClass = require('create-react-class');
 
-var ConfirmDialog = React.createClass({
+var ConfirmDialog = createReactClass({
 	getDefaultProps: function() {
 		return {
+			asHtml: false,
+			confirmClasses: 'react-confirm-dialog-button confirm',
+			cancelClasses: 'react-confirm-dialog-button cancel',
 			cancel: function() { return; }
 		};
 	},
@@ -15,11 +19,15 @@ var ConfirmDialog = React.createClass({
 		return (
 			<div className="react-confirm-dialog-bg">
 				<div className="react-confirm-dialog-content">
-					<p>{this.props.confirmMessage}</p>
-					<button className="react-confirm-dialog-button confirm" onClick={this.executeAction}>
+				  {this.props.asHtml == true &&
+						<div dangerouslySetInnerHTML={{__html: this.props.confirmMessage}} />}
+					{this.props.asHtml == false
+						&& <p>{this.props.confirmMessage}</p>}
+					<button className={this.props.confirmClasses} onClick={this.executeAction}>
 						{this.props.confirmText}
 					</button>
-					<button className="react-confirm-dialog-button cancel" onClick={this.props.cancel}>
+					&nbsp;
+					<button className={this.props.cancelClasses} onClick={this.props.cancel}>
 						{this.props.cancelText}
 					</button>
 				</div>
